@@ -1,0 +1,11 @@
+.bottom-icons{
+    color: aliceblue;
+    margin-top: 70px;
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    word-spacing: 10px;
+    padding-left: 400px;
+    padding-right: 400px;
+}
