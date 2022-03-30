@@ -1,0 +1,66 @@
+.padding-top{
+    padding-top: 20px;
+}
+
+.input-fields{
+   margin: 10px;
+   
+   display: flex;
+}
+
+.left-field{
+    height: 300px;
+    width: 500px;
+    background-color: darkgray;
+    margin-left: 100px;
+    border: 1px #0F0537;
+    border-radius: 30px;
+}
+
+.right-field{
+    height: 300px;
+    width: 500px;
+    background-color: darkgray;
+    border: 1px #0F0537;
+    border-radius: 30px;
+}
+
+.icon-middle{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 150px;
+    color: aliceblue;
+}
+
+.field-header{
+    height: 40px;
+    width: 500px;
+    color: black;
+    background-color:darkgray;
+    font: inherit;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    padding-left: 25px;
+    justify-content: center;
+    padding-top: 10px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.field{
+    background-color: aliceblue;
+    border: none;
+    padding-top: 10px;
+    padding-left: 10px;
+    margin-top: 10px;
+    height: 250px;
+    width: 500px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+}
+
+.button{
+    border: none;
+    color: aliceblue;
+}
