@@ -39,6 +39,7 @@ jobs:
           # If a shell script is not executable the bash-exec linter will report an error
           ERROR_ON_MISSING_EXEC_BIT: true
          
+         
           # New or edited files will be parsed for validation
           VALIDATE_ALL_CODEBASE: false
          
