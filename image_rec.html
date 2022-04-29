@@ -2,6 +2,10 @@
 <html lang="en">
   <head>
 
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap');
+    </style>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -24,9 +28,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 
+    <!--<script src = "NotoSerifSinhala-Regular-normal.js"></script>-->
+    <script src = "scripts/Bandula Normal-normal.js"></script>
+    <script src = "jspdf.debug.js"></script>
+
+
   </head>
 
   <body>
+
     <section>
       <header>
 
@@ -163,8 +173,8 @@
                         <div class="dropdown-content">
                             <div onclick="saveAsText('result')">Text</div>
                             <div onclick="saveAsRichText('result')">Rich Text</div>
-                            <div>PDF</div>
-                            <div>Word</div>
+                            <div onclick="saveAsPDF('result')">PDF</div>
+                            <div onclick="saveAsWord('result' , 'critr')">Word</div>
                         </div>
                     </div>
                 </div>
