@@ -2,10 +2,6 @@
 <html lang="en">
   <head>
 
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap');
-    </style>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -18,7 +14,7 @@
 
     <script src="scripts/button_functions.js"></script>
 
-    <script src=“https://code.jquery.com/jquery-3.4.1.slim.min.js” integrity=“sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n” crossorigin=“anonymous”></script>
+    <!--<script src=“https://code.jquery.com/jquery-3.4.1.slim.min.js” integrity=“sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n” crossorigin=“anonymous”></script>-->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin=“anonymous”></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -28,15 +24,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 
-    <!--<script src = "NotoSerifSinhala-Regular-normal.js"></script>-->
-    <script src = "scripts/Bandula Normal-normal.js"></script>
-    <script src = "jspdf.debug.js"></script>
-
-
   </head>
 
   <body>
-
     <section>
       <header>
 
@@ -83,13 +73,15 @@
         //
         const detectImageForm = document.querySelector("#detectImageForm");
         const imageFile = detectImageForm.querySelector("#imageFile");
-        const imagePreview = document.querySelector("#imagePreview");
+        //const imagePreview = document.querySelector("#imagePreview");
         const result = document.querySelector("#result");
 
+        /*
         const setImagePreview = async () => {
           const imageBase64String = await getImageBase64String();
           imagePreview.setAttribute("src", imageBase64String);
         };
+        */
   
         //
         const detectImage = async () => {
@@ -105,7 +97,7 @@
             ]
           };
   
-          //
+          //API URL
           const url = "https://vision.googleapis.com/v1/images:annotate?key=AIzaSyAbpnqu6epGr5wYQxc0VCg5VRn7VIbVGtY";
   
           //
@@ -139,11 +131,14 @@
             reader.onerror = error => reject(error);
           });
   
+        /*
         //set image preview
         imageFile.addEventListener("change", e => {
           setImagePreview();
         });
-  
+        */
+
+
         //pass detect method to submit button
         detectImageForm.addEventListener("submit", e => {
           e.preventDefault();
@@ -173,8 +168,8 @@
                         <div class="dropdown-content">
                             <div onclick="saveAsText('result')">Text</div>
                             <div onclick="saveAsRichText('result')">Rich Text</div>
-                            <div onclick="saveAsPDF('result')">PDF</div>
-                            <div onclick="saveAsWord('result' , 'critr')">Word</div>
+                            <div>PDF</div>
+                            <div>Word</div>
                         </div>
                     </div>
                 </div>
@@ -197,24 +192,12 @@
                 </div>
 
 
-                <!--check spelling and grammar for english text feature button-->
-                <div class="feature_btn">
-                    <img src="images/icons/spell_grammarcheck_icon.png" alt="spell_grammarcheck_icon">
-                </div>
-
-
                 <!--translate converted text feature button-->
-                <div class="dropdown">
-                    <div class="feature_btn">
-                        <img src="images/icons/translation_icon.png" alt="translation_icon">
-                        <div class="dropdown-content">
-                            <div>English</div>
-                            <div>Tamil</div>
-                        </div>
-                    </div>
+                <a href="translator.html" target="_blank">
+                  <div class="feature_btn">
+                    <img src="images/icons/translation_icon.png" alt="translation_icon">
                 </div>
-
-
+                </a>
             </div>
         </div>
     </div>

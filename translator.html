@@ -16,17 +16,33 @@
 
   </head>
   <body>
+
+    <header>
+
+      <!--CRITR. Logo-->
+      <a href="index.html">
+        <img src="images/critr_logo.png" class="logo">
+      </a> 
+
+      <!--Navigation Bar-->
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="tool.html" class="active">Tool</a></li>
+      </ul>
+
+    </header>
+
     <div class="container">
       <div class="wrapper">
         <div class="text-input">
           <textarea spellcheck="false" class="from-text" placeholder="Enter text"></textarea>
-          <textarea spellcheck="false" readonly disabled class="to-text" placeholder="Translation"></textarea>
+          <textarea spellcheck="false" readonly disabled class="to-text" placeholder="Translation" id="translatedResult"></textarea>
         </div>
         <ul class="controls">
           <li class="row from">
             <div class="icons">
               <i id="from" class="fas fa-volume-up"></i>
-              <i id="from" class="fas fa-copy"></i>
             </div>
             <select></select>
           </li>
@@ -35,7 +51,6 @@
             <select></select>
             <div class="icons">
               <i id="to" class="fas fa-volume-up"></i>
-              <i id="to" class="fas fa-copy"></i>
             </div>
           </li>
         </ul>
@@ -43,8 +58,64 @@
       <button>Translate Text</button>
     </div>
 
+
     <script src="scripts/countries.js"></script>
     <script src="scripts/translator.js"></script>
+
+
+    <!--Function Buttons-->
+    <div class="functions">
+      <div class="btn_container">
+          <div id="btn_flex_warpper">
+
+
+              <!--copy converted text button-->
+              <div class="feature_btn" onclick="copyText('demo')">
+                  <img src="images/icons/copy_icon.png" alt="copy_icon">
+              </div>
+
+
+              <!--save converted text to document button-->
+              <div class="dropdown">
+                  <div class="feature_btn">
+                      <img src="images/icons/save_icon.png" alt="save_icon">
+                      <div class="dropdown-content">
+                          <div onclick="saveAsText('result')">Text</div>
+                          <div onclick="saveAsRichText('result')">Rich Text</div>
+                          <div>PDF</div>
+                          <div>Word</div>
+                      </div>
+                  </div>
+              </div>
+              
+              
+              <!--share converted text button-->
+              <div class="dropdown">
+                  <div class="feature_btn">
+                      <img src="images/icons/share_icon.png" alt="share_icon">
+                      <div class="dropdown-content">
+                          <div onclick="shareOnFacebook('result')">Facebook</div>
+                          <div onclick="shareOnTwitter('result')">Twitter</div>
+                      </div>
+                  </div>
+              </div>
+              
+              <!--print converted text button-->
+              <div class="feature_btn" onclick="printText('result')">
+                  <img src="images/icons/print_icon.png" alt="print_icon">
+              </div>
+
+
+              <!--translate converted text feature button-->
+              <a href="translator.html" target="_blank">
+                <div class="feature_btn">
+                  <img src="images/icons/translation_icon.png" alt="translation_icon">
+                </div>
+              </a>
+              
+            </div>
+        </div>
+    </div>
 
   </body>
 </html>
