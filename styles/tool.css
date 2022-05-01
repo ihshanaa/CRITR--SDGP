@@ -28,3 +28,8 @@ section {
     color: #000;
     text-decoration: none;
 }
+
+a {
+    text-decoration: none;
+    color: #000;
+}

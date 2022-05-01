@@ -1,8 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
 
-
-
 section {
 	position: relative;
 	width: 100%;
@@ -112,4 +110,9 @@ input[type="file"] {
 
 input[type="submit"] {
     display: none;
+}
+
+.wordcount {
+    color: #e65541;
+    font-size: 12px;
 }

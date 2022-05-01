@@ -1,6 +1,6 @@
-/* Import Google Font - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-*c{
+
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -21,6 +21,9 @@ body {
   background: #fff;
   border-radius: 7px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.01);
+  margin-left: 30px;
+  margin-bottom: 70px;
+  margin-top: 100px;
 }
 
 .wrapper {
@@ -179,4 +182,75 @@ body {
   .controls .exchange{
     font-size: 14px;
   }
+}
+
+
+
+
+
+.btn_container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  align-items: center;
+  background: #281b5d;
+  margin-top: -100px;
+}
+
+#btn_flex_warpper {
+  align-items: center;
+  margin: auto;
+  display: flex;
+}
+
+.feature_btn {
+  padding: 8px 8px 4px 8px;
+  background-color: #fff;
+  margin: 20px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.feature_btn > img {
+  max-width: 25px;
+  height: auto;
+}
+
+#output_text {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Dropdown Button */
+
+.dropdown-content {
+  display: none;
+  background-color: #fff;
+  color: #000;
+  position: absolute;
+  z-index: 1;
+  border-radius: 12px;
+  padding: 9px;
+  margin-top: 9px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.functions {
+  display: flex;
+  align-items: center;
+  background: #281b5d;
+  width: 100%;
+  position: relative;
+  min-height: 50vh;
+  margin-top: -20vh;
+}
+
+.wordcounts {
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  font-weight: 600;
 }
