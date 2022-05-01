@@ -1,1 +1,7 @@
+CRITR is an OCR web application that recognizes Sinhala Handwritten as well as printed characters from Images. 
+It is integrated with enhanced features that could be used with the recognized text. 
+Features provided by the web applicated built included translation of Sinhala text to 193 different languages 
+as well as easy option of saving the recognized text in a numbe of file formats including .txt , .rtf , .pdf and docx. 
 
+CRITR is a research project done by Team Tequila Techs, a group of Level 5 students of Informatics Institute of Technology (Ltd)
+The project is completed in collaboration with the University of Westminster, United Kingdom.  
