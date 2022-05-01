@@ -42,6 +42,7 @@ translateBtn.addEventListener("click", () => {
                 toText.value = data.translation;
             }
         });
+
         toText.setAttribute("placeholder", "Translation");
     });
 });
@@ -68,3 +69,108 @@ icons.forEach(icon => {
         }
     });
 });
+
+
+/* Copies the output text to the clipboard */
+function copyText(idName) {
+    var r = document.createRange();
+    r.selectNode(document.getElementById(idName));
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(r);
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+}
+
+/* .txt format */
+function saveAsText(idName1) {
+    var txt = document.getElementById(idName1).value;
+    var file = new Blob([txt],{type:"text"});
+    var anchor = document.createElement("a");
+    anchor.href = URL.createObjectURL(file);
+    anchor.download = "critr.txt";  /* Change file extension for different file formats */
+    anchor.click();
+}
+
+/* .rtf format */
+function saveAsRichText(idName1) {
+    var txt = document.getElementById(idName1).value;
+    var file = new Blob([txt],{type:"text"});
+    var anchor = document.createElement("a");
+    anchor.href = URL.createObjectURL(file);
+    anchor.download = "critr.rtf";  /* Change file extension for different file formats */
+    anchor.click();
+}
+
+/* .pdf format */
+function saveAsPDF(idName1) {
+    var txt = document.getElementById(idName1).value;
+    const doc = new jsPDF();
+    doc.text(txt, 20, 20);
+    /*doc.setFont("NotoSerifSinhala-Regular", 'normal');*/
+    doc.save("critr.pdf");
+    
+    
+}
+/* .docx format */
+function saveAsWord(element1, filename = ''){
+    var preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Export HTML To Doc</title></head><body>";
+    var postHtml = "</body></html>";
+    var html = preHtml+ document.getElementById(element1).value+postHtml;
+
+    var blob = new Blob(['\ufeff', html],{
+        type: 'application/msword'
+    });
+
+    var url = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(html)
+
+    filename = filename?filename+'.doc': 'critr.doc';
+
+    var downloadLink = document.createElement("a");
+
+    document.body.appendChild(downloadLink);
+
+    if(navigator.msSaveOrOpenBlob){
+        navigator.msSaveOrOpenBlob(blob, filename);
+    }else{
+        downloadLink.href = url;
+
+        downloadLink.download = filename;
+
+        downloadLink.click();
+    }
+
+    document.body.removeChild(downloadLink);
+
+
+}
+
+
+/* Print the output text */
+function printText(idName, idName1) {
+    var divContents = document.getElementById(idName).value;
+    var a = window.open('', '');
+    a.document.write(divContents + ("<br>") + document.getElementById(idName1).value);
+    a.document.close();
+    a.print();
+}
+
+
+/* Share to social media */
+
+/* Share to Facebook */
+function shareOnFacebook(idName) {
+    const navUrl = 
+    'https://www.facebook.com/sharer/sharer.php?u=' +
+    document.getElementById(idName).value; 
+    ;
+    window.open(navUrl , '_blank');
+} 
+
+/* Share to Twitter */
+
+function shareOnTwitter(idName) {
+    const navUrl =
+      'https://twitter.com/intent/tweet?text=' +
+      document.getElementById(idName).value;
+    window.open(navUrl, '_blank');
+}
